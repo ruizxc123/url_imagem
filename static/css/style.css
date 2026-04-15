@@ -1,0 +1,301 @@
+/* =============================================
+   ESTILO PERSONALIZADO SOBRE BOOTSTRAP 5
+   Design refinado, longe do padrão "genérico IA"
+   ============================================= */
+
+:root {
+    /* Paleta suave e profissional */
+    --primary-soft: #6d5b98;
+    --primary-deep: #3e2f5e;
+    --accent-warm: #d4a5a5;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --shadow-elevated: 0 20px 35px -8px rgba(0, 0, 0, 0.12), 0 8px 20px -6px rgba(0, 0, 0, 0.05);
+    --transition-smooth: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+    --border-radius-card: 28px;
+}
+
+/* Reset sutil sobre o Bootstrap */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #eae4f0 0%, #d9cee6 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* Container principal com efeito vidro */
+.container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-elevated), inset 0 0 0 1px var(--glass-border);
+    padding: 2.5rem 2.8rem;
+    max-width: 650px;
+    width: 100%;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Tipografia refinada */
+h1 {
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--primary-deep), #7b63a8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.25rem;
+    font-size: 2.4rem;
+}
+
+.subtitle {
+    color: #4b4453;
+    font-weight: 400;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.8rem;
+}
+
+/* Caixa de erro personalizada (usa alert do Bootstrap como base) */
+.error-box {
+    background: #fff2f0;
+    color: #b42318;
+    border-left: 5px solid #b42318;
+    border-radius: 14px;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(180, 35, 24, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-box::before {
+    content: "⚠️";
+    font-size: 1.2rem;
+}
+
+/* Área de upload */
+.upload-area {
+    background: rgba(250, 250, 252, 0.7);
+    border: 2px dashed #c8c0d8;
+    border-radius: 22px;
+    padding: 2.2rem 1.8rem;
+    margin-bottom: 2rem;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(4px);
+}
+
+.upload-area:hover {
+    border-color: var(--primary-soft);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 20px -8px rgba(109, 91, 152, 0.15);
+}
+
+/* Input de arquivo customizado (integra com Bootstrap) */
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    margin-bottom: 1.8rem;
+    cursor: pointer;
+    color: #2d2a33;
+    font-size: 0.95rem;
+}
+
+input[type="file"]::file-selector-button {
+    background: white;
+    border: 1.5px solid #d4cce1;
+    border-radius: 40px;
+    padding: 0.5rem 1.5rem;
+    margin-right: 1rem;
+    font-weight: 500;
+    color: #3e2f5e;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #f7f4fc;
+    border-color: var(--primary-soft);
+    box-shadow: 0 4px 8px rgba(109, 91, 152, 0.1);
+}
+
+/* Botão principal */
+button[type="submit"] {
+    background: var(--primary-soft);
+    color: white;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 60px;
+    font-size: 1.1rem;
+    font-weight: 550;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 18px -8px rgba(109, 91, 152, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+button[type="submit"]:hover {
+    background: #7b63a8;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 24px -10px rgba(94, 74, 138, 0.5);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 12px -6px rgba(0, 0, 0, 0.2);
+}
+
+/* Área de resultado */
+.result {
+    margin-top: 2.5rem;
+    padding: 1.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+}
+
+.result h3 {
+    color: var(--primary-deep);
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.result h3::before {
+    content: "✓";
+    font-weight: 600;
+    color: #2b8c5e;
+    background: #e6f3e6;
+    width: 26px;
+    height: 26px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Caixa da URL */
+.url-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border: 1px solid #e7e1ef;
+    border-radius: 60px;
+    padding: 0.45rem 0.45rem 0.45rem 1.3rem;
+    margin: 1.4rem 0;
+    gap: 10px;
+    box-shadow: 0 4px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
+.url-box a {
+    color: var(--primary-soft);
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    text-align: left;
+    font-weight: 450;
+    transition: color 0.2s;
+}
+
+.url-box a:hover {
+    color: var(--primary-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Botão copiar refinado */
+.copy-btn {
+    background: #f1edf7;
+    color: #2d233b;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 550;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    min-width: 90px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.copy-btn:hover {
+    background: #e1d8ef;
+    box-shadow: 0 6px 12px -6px rgba(109, 91, 152, 0.2);
+}
+
+.copy-btn.success {
+    background: #2b8c5e;
+    color: white;
+    box-shadow: 0 8px 16px -8px #1e6f4b;
+    border-color: #a0d8b4;
+}
+
+/* Pré-visualização da imagem */
+.preview {
+    margin-top: 1.8rem;
+}
+
+.preview p {
+    margin-bottom: 0.8rem;
+    color: #3a3442;
+    font-weight: 450;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 240px;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.preview img:hover {
+    transform: scale(1.01);
+}
+
+/* Responsividade fina */
+@media (max-width: 576px) {
+    .container {
+        padding: 1.8rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .upload-area {
+        padding: 1.5rem 1rem;
+    }
+}

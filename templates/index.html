@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem → URL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Imagem → URL</h1>
+        <p class="subtitle">Faça upload de uma imagem e receba um link direto</p>
+
+        {% if error %}
+        <div class="error-box">
+            <p> {{ error }}</p>
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <div class="upload-area">
+                <input type="file" name="imagem" accept="image/png, image/jpeg, image/gif, image/webp" required>
+                <button type="submit">Enviar e gerar URL</button>
+            </div>
+        </form>
+
+        {% if image_url %}
+        <div class="result">
+            <h3> URL gerada com sucesso!</h3>
+            <div class="url-box">
+                <a href="{{ image_url }}" target="_blank" id="imageUrl" title="{{ image_url }}">{{ image_url }}</a>
+                <button class="copy-btn" id="copyBtn" onclick="copiarUrl()">Copiar</button>
+            </div>
+            <div class="preview">
+                <p><strong>Prévia:</strong></p>
+                <img src="{{ image_url }}" alt="Imagem enviada">
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
